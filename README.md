@@ -1,2 +1,2 @@
-# gitlet
-I created a lighweight version of the version control system, git. 
+# CTSP Open Data
+This is the code for the CTSP Open Data metric
