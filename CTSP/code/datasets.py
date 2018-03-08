@@ -13,6 +13,7 @@ def find_all_links(url, depth, constraint = None):
 		url = url[1: len(url) - 1]
 	if constraint != None:
 		if constraint(url):
+                        print url
 			url_list += [url]
 			return url_list
 	else:
@@ -34,11 +35,10 @@ def find_all_links(url, depth, constraint = None):
 	for link in dom.xpath('//a/@href'):
 		if "http" not in link:
 			link = url + link
-			print link
 		find_all_links(link, depth - 1, constraint)
 
 def constraint(url):
 	return url[-5:] == "/data"
 
 
-find_all_links("https://data.cityofberkeley.info", 3, constraint)
+find_all_links("https://data.cityofberkeley.info", 5, constraint)
