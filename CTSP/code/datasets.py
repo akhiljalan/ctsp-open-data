@@ -4,9 +4,9 @@ import lxml.html
 global url_list
 url_list = []
 def find_all_links(url, depth, constraint = None):
-### This function will find all hyperlinks in a given website up to a 
-### depth. It will also check all links against a constraint function. 
-### It will return a list with all of these functions in them. 
+	### This function will find all hyperlinks in a given website up to a 
+	### depth. It will also check all links against a constraint function. 
+	### It will return a list with all of these functions in them. 
 	global url_list
 	if constraint != None:
 		if constraint(url):
@@ -18,8 +18,11 @@ def find_all_links(url, depth, constraint = None):
 	if depth == 0:
 		return url_list
 
-	connection = urllib2.urlopen(url)
-	dom = lxml.html.fromstring(connection.read())
+	try:
+		connection = urllib2.urlopen(url)
+		dom = lxml.html.fromstring(connection.read())
+	except:
+		return
 
 	for link in dom.xpath('//a/@href'):
 		if "http" not in link:
@@ -27,8 +30,8 @@ def find_all_links(url, depth, constraint = None):
 			print link
 		find_all_links(link, depth - 1, constraint)
 
+def constraint(url):
+	return url[-5:] == "/data"
 
 
-
-
-
+find_all_links("https://data.cityofberkeley.info", 3, constraint)
