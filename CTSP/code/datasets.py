@@ -12,7 +12,7 @@ def find_all_links(url, depth, constraint = None):
 	global url_list
         global visited
 	if url[-1] == "/":
-		url = url[1: len(url) - 1]
+		url = url[01: len(url) - 1]
 	if constraint != None:
 		if constraint(url):
                         print url
