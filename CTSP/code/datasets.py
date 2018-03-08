@@ -1,5 +1,7 @@
 import urllib2
 import lxml.html
+import csv
+
 
 global url_list
 global visited
@@ -48,3 +50,7 @@ def constraint(url):
 
 
 find_all_links("https://data.cityofberkeley.info", 10, constraint)
+
+with open('../data/test.csv', 'wb') as myfile:
+    wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+    wr.writerow(url_list)
