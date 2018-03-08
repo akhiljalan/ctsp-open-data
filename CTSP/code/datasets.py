@@ -13,6 +13,9 @@ def find_all_links(url, depth, constraint = None):
         global visited
 	if url[-1] == "/":
 		url = url[0 : len(url) - 1]
+
+	if "dev.socrata" in url:
+		return url_list
 	if constraint != None:
 		if constraint(url):
                         print url
