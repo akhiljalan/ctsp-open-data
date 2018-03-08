@@ -3,11 +3,14 @@ import lxml.html
 
 global url_list
 url_list = []
+visited = []
 def find_all_links(url, depth, constraint = None):
 	### This function will find all hyperlinks in a given website up to a 
 	### depth. It will also check all links against a constraint function. 
 	### It will return a list with all of these functions in them. 
 	global url_list
+	if url[-1] == "/":
+		url = url[1: len(url) - 1]
 	if constraint != None:
 		if constraint(url):
 			url_list += [url]
@@ -17,6 +20,10 @@ def find_all_links(url, depth, constraint = None):
 
 	if depth == 0:
 		return url_list
+	if url in visited:
+		return url_list
+	else:
+		visited += [url]
 
 	try:
 		connection = urllib2.urlopen(url)
