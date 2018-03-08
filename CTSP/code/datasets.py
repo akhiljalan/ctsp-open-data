@@ -47,4 +47,4 @@ def constraint(url):
 	return url[-5:] == "/data"
 
 
-find_all_links("https://data.cityofberkeley.info", 5, constraint)
+find_all_links("https://data.cityofberkeley.info", 10, constraint)
