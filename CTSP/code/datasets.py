@@ -49,7 +49,7 @@ def constraint(url):
 	return url[-5:] == "/data"
 
 
-find_all_links("https://data.cityofberkeley.info", 10, constraint)
+find_all_links("https://data.cityofberkeley.info", 12, constraint)
 
 with open('../data/test.csv', 'wb') as myfile:
     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
