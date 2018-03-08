@@ -2,6 +2,7 @@ import urllib2
 import lxml.html
 
 global url_list
+global visited
 url_list = []
 visited = []
 def find_all_links(url, depth, constraint = None):
@@ -9,6 +10,7 @@ def find_all_links(url, depth, constraint = None):
 	### depth. It will also check all links against a constraint function. 
 	### It will return a list with all of these functions in them. 
 	global url_list
+        global visited
 	if url[-1] == "/":
 		url = url[1: len(url) - 1]
 	if constraint != None:
