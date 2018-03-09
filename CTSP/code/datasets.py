@@ -8,21 +8,24 @@ import csv
 global url_list
 global visited
 global adjacency_lists
+global depth_list
 url_list = []
 visited = []
 adjacency_lists = {}
+depth_list = []
 
 def find_all_links(url, depth, constraint = None):
 	### This function will find all hyperlinks in a given website up to a 
 	### depth. It will also check all links against a constraint function. 
 	### It will return a list with all of these functions in them. 
-	global url_list, visited, adjacency_lists
+	global url_list, visited, adjacency_lists, depth_list
 	#global visited
 	#global adjacency_lists
 	local_adj_list = []
 	if url[-1] == "/":
 		url = url[0 : len(url) - 1]
 	print ("At depth: {}".format(depth))
+	depth_list += [depth]
 
 	if "dev.socrata" in url:
 		return local_adj_list
@@ -64,15 +67,32 @@ def constraint(url):
 
 # if name == '__main__': 
 find_all_links("https://data.cityofberkeley.info", 1)
-with open('../data/test2.csv', 'wb') as myfile:
-	wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-	for url in url_list:
-		wr.writerow(url)
-		try:
-			# print(adjacency_lists[url])
 
-			for linked_url in adjacency_lists[url]:
-				print('From {} to ----- Linked url:{}'.format(url, linked_url))
-				wr.writerow(adjacency_lists[linked_url])
-		except KeyError as e: 
-			pass
+
+f = open('../data/url_list.txt','w')
+g = open('../data/edges.txt','w')
+for i in range(len(url_list)):
+	f.write("Depth: {} | URL: {} \n".format(depth_list[i], url_list[i]))
+	url = url_list[i]
+	try:
+		for linked_url in adjacency_lists[url]:
+	 		g.write('From {} to ----- Linked url:{} \n'.format(url, linked_url))
+	except KeyError as e:
+	 	pass
+f.close()
+g.close()
+
+
+
+# with open('../data/test2.csv', 'wb') as myfile:
+# 	wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
+# 	for url in url_list:
+# 		wr.writerow(url)
+# 		try:
+# 			# print(adjacency_lists[url])
+
+# 			for linked_url in adjacency_lists[url]:
+# 				print('From {} to ----- Linked url:{}'.format(url, linked_url))
+# 				wr.writerow(adjacency_lists[linked_url])
+# 		except KeyError as e: 
+# 			pass
