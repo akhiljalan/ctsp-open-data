@@ -30,22 +30,25 @@ def find_all_links(url, depth, constraint = None):
 	if constraint != None:
 		if constraint(url):
 			print url
+			#url_list += [url]
 			local_adj_list += [url]
 			return local_adj_list
 	else:
+		#url_list += [url]
 		local_adj_list += [url]
 
 	if depth == 0:
 		return local_adj_list
 	if url not in visited: 
 		visited += [url]
-	
+	# if url in visited:
+	# 	local_adj_list += [url]
+	# else:
+	# 	visited += [url]
 	local_adj_list += [url]
 	try:
 		connection = urllib2.urlopen(url)
 		dom = lxml.html.fromstring(connection.read())
-		if len(dom.xpath('//a/@href')) < 4:
-			return local_adj_list
 	except:
 		return local_adj_list
 
@@ -60,8 +63,8 @@ def constraint(url):
 	### This defines a constraint function that looks at just the url. 
 	return url[-5:] == "/data"
 
-if __name__ == '__main__': 
-	find_all_links("https://data.cityofberkeley.info", 2)
+# if name == '__main__': 
+find_all_links("https://data.cityofberkeley.info", 2)
 
 
 f = open('../data/url_list.txt','w')
