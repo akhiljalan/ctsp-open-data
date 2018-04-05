@@ -61,7 +61,7 @@ def constraint(url):
 	return url[-5:] == "/data"
 
 if __name__ == '__main__': 
-	find_all_links("https://data.cityofberkeley.info", 2)
+	find_all_links("https://www.cityofberkeley.info", 2)
 
 
 f = open('../data/url_list.txt','w')
