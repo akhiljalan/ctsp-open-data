@@ -30,7 +30,7 @@ def find_incident_nodes(url):
 	# adjacency_lists[url] = []
 	for link in raw_html.xpath('//a/@href'):
 		if link in ['#', url]: 
-			print(link)
+			print('Ignoring link {} from {}'.format(link, url))
 			pass
 		if "http" not in link:
 			# avoid relative links
