@@ -3,6 +3,7 @@
 from urllib import request
 import lxml
 from lxml import html
+import Utils as utils
 
 
 
@@ -53,7 +54,6 @@ def bfs_search(start_url):
 		#update adjacency list 
 		all_adj_list[current_url] = incident_nodes
 
-
 		for node in incident_nodes: 
 			if node not in visited_nodes: 
 				queue.append(node)
@@ -63,7 +63,10 @@ def bfs_search(start_url):
 def main(): 
 	link = 'https://www.cityofberkeley.info'
 	link2 = 'https://stats.stackexchange.com/questions/51185/connection-between-fisher-metric-and-the-relative-entropy'
-	bfs_search(link)
+	link_dict = bfs_search(link)
+	param, value = link.split("//", 1)
+	utils.save_object(link_dict, value)
+
 
 if __name__ == "__main__":
 	main()
