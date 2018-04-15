@@ -25,6 +25,4 @@ def get_num_datasets(data_cat_url):
 
 if __name__ == '__main__':
 	data_set_name = main()
-	print data_set_name
-	#save_object(data_set_name, 'num_of_data_sets')
-	#print(read_object('num_of_data_sets'))
+	
