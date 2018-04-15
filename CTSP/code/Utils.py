@@ -16,8 +16,8 @@ def read_object(filename):
 			return
 
 
-def write_to_csv(obj):
+#def write_to_csv(obj):
 	###TODO
 
-def read_from_csv(filename):
+#def read_from_csv(filename):
 	###TODO
