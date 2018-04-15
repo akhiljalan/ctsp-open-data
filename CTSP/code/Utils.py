@@ -1,3 +1,7 @@
+import csv
+import pickle
+import os
+
 def save_object(obj, filename):
 	### Serializes an object to a binary file format
     with open(filename, 'wb') as output:  # Overwrites any existing file.
@@ -12,3 +16,8 @@ def read_object(filename):
 			return
 
 
+def write_to_csv(obj):
+	###TODO
+
+def read_from_csv(filename):
+	###TODO
