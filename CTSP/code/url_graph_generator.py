@@ -4,7 +4,7 @@ import urllib2
 import lxml.html
 import csv
 import h5py
-import deepdish as dd
+
 
 url_list = []
 visited = []
