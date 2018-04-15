@@ -22,8 +22,8 @@ def find_incident_nodes(url):
 		http_response = request.urlopen(url)
 		open_response = http_response.read()
 		raw_html = lxml.html.fromstring(open_response)
-	except error as e: 
-		print(e)
+	except: 
+		#print(e)
 		# print('Error: {}'.format(e))
 		return local_adj_list
 
@@ -63,7 +63,7 @@ def bfs_search(start_url):
 def main(): 
 	link = 'https://www.cityofberkeley.info'
 	link2 = 'https://stats.stackexchange.com/questions/51185/connection-between-fisher-metric-and-the-relative-entropy'
-	bfs_search(link2)
+	bfs_search(link)
 
 if __name__ == "__main__":
 	main()
