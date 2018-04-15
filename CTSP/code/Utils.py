@@ -39,4 +39,14 @@ def write_to_csv(col_name, col_data, filename):
     	}
     	)
 	temp_df.to_csv(filename)
+
+
+def read_from_csv(filename):
+	"""
+	Reads a csv into a pandas dataframe
+	"""
+	try:
+		return pd.read_csv(filename)
+	except:
+		return None
  	
