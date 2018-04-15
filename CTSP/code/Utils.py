@@ -2,6 +2,8 @@ import csv
 import pickle
 import os
 import pandas as pd
+import sys
+
 
 def save_object(obj, filename):
 	"""
@@ -25,19 +27,19 @@ def read_object(filename):
 
 
 def write_to_csv(col_name, col_data, filename):
+	"""
+	Writes a column name and data (in list format) to a 
+	.csv filename. 
  	"""
- 	Writes a column name and data (in list format) to a 
- 	.csv filename. 
- 	"""
- 	try:
-    	temp_df = pd.read_csv(filename)
-    	temp_df[col_name] = col_data
+	try:
+		temp_df = pd.read_csv(filename)
+		temp_df[col_name] = col_data
 	except:
-    	temp_df = pd.DataFrame(
-    	{
-        	colname:colvals
-    	}
-    	)
+		temp_df = pd.DataFrame(
+		{
+		colname:colvals
+		}
+	)
 	temp_df.to_csv(filename)
 
 
