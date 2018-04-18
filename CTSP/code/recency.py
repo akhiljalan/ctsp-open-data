@@ -1,16 +1,16 @@
 # import networkx as nx
 from Utils import *
-<<<<<<< HEAD
+
 from urllib import request
 import re
 from sodapy import Socrata
-
-def main(url = 'https://data.cityofberkeley.info/311/311-Cases/k489-uv4i'):
-	return ...
-=======
+from urllib.request import urlopen, Request
+import urllib
 from urllib.request import urlopen, Request
 import urllib
 from urllib.request import urlopen
+
+
 
 
 def extract_last_modified(response_string): 
@@ -26,9 +26,14 @@ def extract_last_modified(response_string):
 
 
 
+
 def print_meta(link): 
 	try: 
 		# print(urlopen(link).info().__str__())
+
+def print_meta(link): 
+	try: 
+
 		response_str = urlopen(link).info().__str__()
 		print(response_str)
 		extract_last_modified(response_str)
@@ -58,7 +63,6 @@ def main():
 	# 	print('Trying: {}'.format(city))
 	# 	print_meta(city)
 	
->>>>>>> 34b27b0ff8c20d970cc2fc742adb785c47f9c1a4
 
 if __name__ == '__main__':
 	main()
