@@ -1,5 +1,8 @@
 # import networkx as nx
 from Utils import *
+from urllib import request
+import re
+from sodapy import Socrata
 from urllib.request import urlopen, Request
 import urllib
 from urllib.request import urlopen
@@ -15,12 +18,8 @@ def extract_last_modified(response_string):
 	if not found: 
 		print('Nothing')
 
-
-
-
 def print_meta(link): 
 	try: 
-		# print(urlopen(link).info().__str__())
 		response_str = urlopen(link).info().__str__()
 		print(response_str)
 		extract_last_modified(response_str)
@@ -53,3 +52,4 @@ def main():
 
 if __name__ == '__main__':
 	main()
+
