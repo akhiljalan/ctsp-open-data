@@ -1,6 +1,7 @@
 # import networkx as nx
 from Utils import *
-
+import re
+from sodapy import Socrata
 from urllib import request
 import re
 from sodapy import Socrata
@@ -8,7 +9,6 @@ from urllib.request import urlopen, Request
 import urllib
 from urllib.request import urlopen, Request
 import urllib
-from urllib.request import urlopen
 
 
 
@@ -29,7 +29,7 @@ def extract_last_modified(response_string):
 
 def print_meta(link): 
 	try: 
-		# print(urlopen(link).info().__str__())
+		print(urlopen(link).info().__str__())
 
 def print_meta(link): 
 	try: 
@@ -62,7 +62,7 @@ def main():
 	# 	print('------------------------------------------')
 	# 	print('Trying: {}'.format(city))
 	# 	print_meta(city)
-	
+
 
 if __name__ == '__main__':
 	main()
