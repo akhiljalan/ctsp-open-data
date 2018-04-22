@@ -23,6 +23,9 @@ def get_num_datasets(data_cat_url):
 			pass
 	return temp2
 
+def name():
+    return "Amount of Data"
+
 if __name__ == '__main__':
 	data_set_name = main()
 	

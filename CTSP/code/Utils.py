@@ -37,10 +37,10 @@ def write_to_csv(col_name, col_data, filename):
 	except:
 		temp_df = pd.DataFrame(
 		{
-		colname:colvals
+		col_name:col_data
 		}
 	)
-	temp_df.to_csv(filename)
+	temp_df.to_csv(filename, index = False)
 
 
 def read_from_csv(filename):

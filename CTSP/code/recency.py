@@ -23,13 +23,11 @@ def extract_last_modified(response_string):
 	if not found: 
 		print('Nothing')
 
-
-
-
-
 def print_meta(link): 
-	try: 
-		print(urlopen(link).info().__str__())
+    try:
+        print(urlopen(link).info().__str__())
+    except:
+        return
 
 def print_meta(link): 
 	try: 
@@ -64,6 +62,8 @@ def main():
 	# 	print_meta(city)
 
 
+def name():
+    return "Recency of dataset"
 if __name__ == '__main__':
 	main()
 
