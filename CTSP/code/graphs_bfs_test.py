@@ -16,9 +16,11 @@ from bs4 import BeautifulSoup
 # def condition(link):
 # 	to_avoid = ["dev.socrata.com", "www.socrata.com"] 
 def parse(page_html):
-	parsed_html = BeautifulSoup(html, "lxml")
-	print(parsed_html)
-	return parsed_html.body.find('div', attrs={'class':'browse2-results'}) + parsed_html.body.find('div', attrs={'class':'browse2-results-pagination-controls'}) 
+	parsed_html = BeautifulSoup(page_html, "lxml")
+	# print(parsed_html)
+	print(page_html)
+	print(str(parsed_html.body.find('div', attrs={'class':'browse2-results'})))
+	return str(parsed_html.body.find('div', attrs={'class':'browse2-results'})) + str(parsed_html.body.find('div', attrs={'class':'browse2-results-pagination-controls'}))
 
 def find_incident_nodes(url):
 	'''
@@ -30,16 +32,16 @@ def find_incident_nodes(url):
 	try:
 		http_response = request.urlopen(url)
 		open_response = http_response.read()
-		# print(open_response)
-		parsed_html = parse(open_response)
-		raw_html = lxml.html.fromstring(parsed_html)
+		# # print(open_response)
+		# parsed_html = parse(open_response)
+		raw_html = lxml.html.fromstring(open_response)
 
 	except: 
 		# print('Error: {}'.format(e))
 		return local_adj_list
 
-	# adjacency_lists[url] = []
-	print(raw_html.xpath('//a/@href'))
+	# # adjacency_lists[url] = []
+	# print(raw_html.xpath('//a/@href'))
 	for link in raw_html.xpath('//a/@href'):
 		if link in ['#', url] or not ("berkeley" in link or "data" in link): 
 			# print(url + link)
@@ -72,9 +74,12 @@ def bfs_search(start_url):
 	queue = [start_url]
 	num_data_sets = 0
 	breadth = 0
+	browse = False
 	while queue != [] and num_data_sets < 25:
 		current_url = queue.pop(0)
-		if "berkeley" in current_url or "data" in current_url:
+		if "browse" in current_url:
+			browse = True
+		if (browse and ("page" in current_url or "browse" not in current_url)) or not browse:
 			visited_nodes.append(current_url)
 
 			#do BFS on one layer. 
@@ -82,9 +87,6 @@ def bfs_search(start_url):
 
 			#update adjacency list 
 			all_adj_list[current_url] = incident_nodes
-			# print(num_data_sets)
-			# print(current_url)
-			# print(incident_nodes)
 			stop = look_ahead(incident_nodes)
 			# if stop == "homepage":
 			# 	continue
