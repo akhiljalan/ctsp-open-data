@@ -46,11 +46,11 @@ def get_raw_str(url):
 
 def main(url):
 	link1 = 'https://data.cityofberkeley.info/311/311-Cases/k489-uv4i'
-    link2 = url
+	link2 = url
 	link_str = get_raw_str(link1)
 	print(len(link_str))
-    return(len(link_str))
-	# 
+    
+
 
 	# print(len(stuff))
 	# cities = ['http://www.ci.antioch.ca.us/', 'https://www.menlopark.org/', 'http://www.ci.richmond.ca.us/',
@@ -62,7 +62,7 @@ def main(url):
 	# 	print('------------------------------------------')
 	# 	print('Trying: {}'.format(city))
 	# 	print_meta(city)
-
+	return len(link_str)
 
 def name():
     return "Recency of dataset"
