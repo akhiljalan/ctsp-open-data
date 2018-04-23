@@ -19,16 +19,14 @@ def get_single_data(url, lst, f):
         """
     try:
         temp = f.main(url)
-        if type(temp) != int or type(temp) != float:
-            return "N"
     except:
-        return "N"
+        return "?"
     return temp
 
 def main():
     """
         Goes through all of the cities in the all_cities dataset, populates all of the
-        cities with an appropriate score or 'N' if the scoring functions don't work.
+        cities with an appropriate score or '?' if the scoring functions don't work.
     """
     all_city_dataset = 'data/all_city_data.csv'
     accessibility_list = []
