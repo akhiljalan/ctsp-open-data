@@ -44,10 +44,12 @@ def get_raw_str(url):
 	raw_str = raw.decode('utf-8')
 	return raw_str
 
-def main():
+def main(url):
 	link1 = 'https://data.cityofberkeley.info/311/311-Cases/k489-uv4i'
+    link2 = url
 	link_str = get_raw_str(link1)
 	print(len(link_str))
+    return(len(link_str))
 	# 
 
 	# print(len(stuff))
