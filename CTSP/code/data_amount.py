@@ -20,7 +20,7 @@ def get_num_datasets(data_cat_url):
 		try:
 			temp2 = int(i)
 		except:
-			pass
+			continue
 	return temp2
 
 def name():

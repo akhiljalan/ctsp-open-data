@@ -16,9 +16,9 @@ from bs4 import BeautifulSoup
 # def condition(link):
 # 	to_avoid = ["dev.socrata.com", "www.socrata.com"] 
 def parse(page_html):
-	parsed_html = BeautifulSoup(html, "lxml")
+	parsed_html = BeautifulSoup(page_html, "lxml")
 	print(parsed_html)
-	return parsed_html.body.find('div', attrs={'class':'browse2-results'}) + parsed_html.body.find('div', attrs={'class':'browse2-results-pagination-controls'}) 
+	return str(parsed_html.body.find('div', attrs={'class':'browse2-results'})) + str(parsed_html.body.find('div', attrs={'class':'browse2-results-pagination-controls'}))
 
 def find_incident_nodes(url):
 	'''
