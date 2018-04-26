@@ -1,2 +1,8 @@
+<<<<<<< HEAD
+CTSP/code/__pycache__/*
+.DS_Store
+CSTP/.DS_Store
+=======
 CSTP/.DS_Store
 CTSP/code/__pycache__
+>>>>>>> 094be13f6ac43a5aa4bd9ca6865b83d9390a2f6c
