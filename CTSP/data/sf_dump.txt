@@ -1,0 +1,9 @@
+Similarity to all words ['financial', 'economy', 'commercial', 'retail']: 0.39073798060417175
+Similarity to all words ['government', 'civil', 'budget', 'management', 'internal', 'employee', 'finances']: 0.38265255093574524
+Similarity to all words ['school', 'district', 'test', 'class', 'youth', 'teacher', 'grade', 'graduation', 'math', 'enrollment', 'pupil']: 0.286761075258255
+Similarity to all words ['water', 'energy', 'natural', 'plant', 'resources', 'bird']: 0.32196250557899475
+Similarity to all words ['hospital', 'flu', 'patient', 'mental', 'inspection', 'nutrition', 'vaccinations', 'rodent']: 0.26217859983444214
+Similarity to all words ['road', 'traffic', 'streets', 'vehicle', 'transportation', 'truck', 'transit', 'parking', 'commute', 'bikeshare']: 0.2514081597328186
+Similarity to all words ['development', 'property', 'buildings', 'infrastructure']: 0.3655898869037628
+Similarity to all words ['police', 'law', 'fire', 'stop', 'safety', 'crime', 'arrest', 'enforcement']: 0.34321463108062744
+Similarity to all words ['community', 'space', 'culture', 'parks']: 0.32375970482826233
