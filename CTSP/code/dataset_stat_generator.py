@@ -28,7 +28,7 @@ def get_stats(url, data_url):
     viewLastModified = data['meta']['view']['viewLastModified']
     tags = breadth.get_key_words(data_url)
     return {'Name': [name],'URL': [data_url], 'Category': [category], 'Created': [created], 
-    'Index Updated': [indexUpdated], 'Number of Comments': [numComments], 'Number of Views': [viewCount], 'View Last Modified': [viewLastModified], 'Tags': [tags]}
+    'Index Updated': [indexUpdated], 'Number of Downloads': [numComments], 'Number of Views': [viewCount], 'View Last Modified': [viewLastModified], 'Tags': [tags]}
 
 
 def write_all_csv(filename, data_dict):
@@ -41,6 +41,7 @@ def write_all_csv(filename, data_dict):
 def main():
 	all_city_data = utils.read_from_csv('../data/all_city_data.csv')
 	city_to_url_dict = dict(zip(all_city_data['City Name'], all_city_data['City Open Data URL']))
+
 	for city in city_to_url_dict:
 		city = str(city)
 		filename = '../data/{}.csv'.format(str(city).replace(' ',''))
@@ -48,8 +49,8 @@ def main():
 		for ds in ds_list:
 			temp = get_stats(city_to_url_dict[city], ds)
 			write_all_csv(filename, temp)
-	ds_list = gds.main(url)
-	write_all_csv('SF', temp)
+	
+	#write_all_csv('SF', temp)
 
 
 if __name__ == '__main__':
