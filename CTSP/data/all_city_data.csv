@@ -1,3 +1,17 @@
-City Name,City URL,City Open Data URL,Accessibility of Data,Breadth of Dataset,Amount of Data,Quality of Data,Recency of dataset
-Berkeley,https://www.cityofberkeley.info/Home.aspx,https://data.cityofberkeley.info/,0,?,25,?,223417
-San Francisco,http://sfgov.org/,https://data.sfgov.org,0,?,299,?,223417
+City Name,City Open Data URL,Accessibility of Data,Breadth of Dataset,Amount of Data,Quality of Data,Recency of dataset,,,,
+Berkeley,https://data.cityofberkeley.info,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,San Francisco,https://data.sfgov.org
+,,,,,,,,,Oakland,https://data.oaklandnet.com
+,,,,,,,,,Santa Rosa,https://data.srcity.org
+,,,,,,,,,Richmond,https://data.richmondgov.com

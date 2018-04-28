@@ -9,7 +9,7 @@ def save_object(obj, filename):
 	"""
 	 Serializes an object to a binary file format
     """
-	filepath = os.path.join("../data/dict", filename)
+	filepath = os.path.join("../data", filename)
 	with open(filepath, 'wb') as output:  
 	# Overwrites any existing file.
 		pickle.dump(obj, output, pickle.HIGHEST_PROTOCOL)
@@ -33,7 +33,7 @@ def write_to_csv(col_name, col_data, filename):
  	"""
 	try:
 		temp_df = pd.read_csv(filename)
-		temp_df[col_name] = col_data
+		temp_df[col_name] += col_data
 	except:
 		temp_df = pd.DataFrame(
 		{
