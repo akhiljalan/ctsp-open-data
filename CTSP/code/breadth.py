@@ -1,4 +1,4 @@
-import networkx as nx
+
 from Utils import *
 from urllib import request
 import re
