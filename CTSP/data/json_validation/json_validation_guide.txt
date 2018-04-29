@@ -1,0 +1,10 @@
+Project Open Data has a tool for JSON validation here: https://labs.data.gov/dashboard/validate
+
+We ran this tool for 6 cities in the Bay Area, and found that the results were identical except for dataset length. You can view these json results as the files named city_name_validate.json 
+
+Berkeley: https://data.cityofberkeley.info/api/views/7a6r-v8mp/rows.json?accessType=DOWNLOAD
+Menlo Park: https://data.menlopark.org/api/views/m8ww-9sgn/rows.json?accessType=DOWNLOAD
+Oakland: https://data.oaklandnet.com/api/views/wm75-yhqe/rows.json?accessType=DOWNLOAD
+Richmond: https://data.richmondgov.com/api/views/km2h-uk82/rows.json?accessType=DOWNLOAD
+Santa Rosa: https://data.srcity.org/api/views/vsiv-m696/rows.json?accessType=DOWNLOAD
+San Francisco: https://data.sfgov.org/api/views/v94x-pf9r/rows.json?accessType=DOWNLOAD

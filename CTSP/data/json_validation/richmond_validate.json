@@ -1,0 +1,51 @@
+{
+    "errors": {
+        "catalog": {
+            "conformsTo": {
+                "errors": [
+                    "The property conformsTo is required"
+                ]
+            }
+        },
+        "dataset": {
+            "ALL": {
+                "errors": [
+                    "The property dataset is required"
+                ]
+            }
+        }
+    },
+    "qa": {
+        "accessLevel_public": 0,
+        "accessLevel_restricted": 0,
+        "accessLevel_nonpublic": 0,
+        "accessURL_present": 0,
+        "accessURL_total": 0,
+        "API_total": 0,
+        "API_public": 0,
+        "API_restricted": 0,
+        "API_nonpublic": 0,
+        "collections_total": 0,
+        "non_collection_total": 0,
+        "validation_counts": {
+            "http_5xx": 0,
+            "http_4xx": 0,
+            "http_3xx": 0,
+            "http_2xx": 0,
+            "http_0": 0,
+            "pdf": 0,
+            "html": 0,
+            "format_mismatch": 0
+        },
+        "license_present": 0,
+        "redaction_present": 0,
+        "redaction_no_explanation": 0,
+        "downloadURL_present": 0,
+        "downloadURL_total": 0
+    },
+    "schema_version": "non-federal-v1.1",
+    "valid": false,
+    "valid_json": true,
+    "total_records": 0,
+    "download_content_length": 405439
+}
