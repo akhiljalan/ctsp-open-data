@@ -1,6 +1,6 @@
 # Spotlight: A Data Accountability Tool for Citizens
 
-This repository contains the data and code used to build https://spotlight-data.github.io/index.html. s
+This repository contains the data and code used to build https://spotlight-data.github.io/index.html.
 
 Check out our visualizations at https://spotlight-data.github.io/vis.html.
 
